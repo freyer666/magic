@@ -7,7 +7,6 @@ package ch.hearc.ig.industrialisation.serie4b.datamapper;
 
 import ch.hearc.ig.industrialisation.serie4b.services.*;
 import ch.hearc.ig.industrialisation.serie4b.business.AccountWithDebitLimit;
-import ch.hearc.ig.industrialisation.serie4b.connexion.OracleConnection;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -52,7 +51,7 @@ public class AccountDLMapper {
             c.close();
 
         } catch (SQLException ex) {
-            Logger.getLogger(AccountDLServices.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AccountServices.class.getName()).log(Level.SEVERE, null, ex);
         }
         return ac;
     }
@@ -79,7 +78,7 @@ public class AccountDLMapper {
             c.close();
 
         } catch (SQLException ex) {
-            Logger.getLogger(AccountCLServices.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AccountServices.class.getName()).log(Level.SEVERE, null, ex);
         }
         return id;
     }
@@ -114,7 +113,7 @@ public class AccountDLMapper {
             s.close();
             c.close();
         } catch (SQLException ex) {
-            Logger.getLogger(AccountCLServices.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AccountServices.class.getName()).log(Level.SEVERE, null, ex);
         }
         return 1;
     }
@@ -147,7 +146,7 @@ public class AccountDLMapper {
             s.close();
             c.close();
         } catch (SQLException ex) {
-            Logger.getLogger(AccountCLServices.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AccountServices.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         return 1;

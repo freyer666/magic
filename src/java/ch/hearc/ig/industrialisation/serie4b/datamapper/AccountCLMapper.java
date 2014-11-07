@@ -51,7 +51,7 @@ public class AccountCLMapper {
             c.close();
             
         } catch (SQLException ex) {
-            Logger.getLogger(AccountCLMapper.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AccountServices.class.getName()).log(Level.SEVERE, null, ex);
         }
         return ac;
     }
@@ -79,7 +79,7 @@ public class AccountCLMapper {
             c.close();
             
         } catch (SQLException ex) {
-            Logger.getLogger(AccountCLMapper.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AccountServices.class.getName()).log(Level.SEVERE, null, ex);
         }
         return id;
     }
@@ -114,7 +114,7 @@ public class AccountCLMapper {
             s.close();
             c.close();
         } catch (SQLException ex) {
-            Logger.getLogger(AccountCLMapper.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AccountServices.class.getName()).log(Level.SEVERE, null, ex);
         }
         return 1;
     }
@@ -147,7 +147,7 @@ public class AccountCLMapper {
             s.close();
             c.close();
         } catch (SQLException ex) {
-            Logger.getLogger(AccountCLMapper.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AccountServices.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     

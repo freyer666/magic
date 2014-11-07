@@ -1,6 +1,6 @@
 
-<%@page import="ch.hearc.ig.industrialisation.serie4b.services.AccountCLServices"%>
-<%@page import="ch.hearc.ig.industrialisation.serie4b.services.AccountCLServices"%>
+<%@page import="ch.hearc.ig.industrialisation.serie4b.services.AccountServices"%>
+
 <%@page import="ch.hearc.ig.industrialisation.serie4b.business.AccountWithCreditLimit"%>
 <!-- made by /-\|\|()|\|`/|\/|()|_|5  |?()><()|?-->
 <%@page import="java.sql.*"%>
@@ -20,15 +20,15 @@
             AccountWithCreditLimit acc = new AccountWithCreditLimit(Float.valueOf(request.getParameter("limite")),idAccount,request.getParameter("label"),Float.valueOf(request.getParameter("balance")) ,Float.valueOf(request.getParameter("rate")) ,Integer.valueOf(request.getParameter("idCustomer")));
               
             if (request.getParameter("action").equals("add")) {
-                AccountCLServices.insertCLAccount(acc);
+                AccountServices.insertCLAccount(acc);
                 
                 
             } else if (request.getParameter("action").equals("delete")) {
                 //System.out.println("suppression");
-                AccountCLServices.deleteCLAccount(acc);
+                AccountServices.deleteCLAccount(acc);
             } else {
 //        System.out.println("update");
-               AccountCLServices.updateCLAccount(acc);
+               AccountServices.updateCLAccount(acc);
             }
             
         %>

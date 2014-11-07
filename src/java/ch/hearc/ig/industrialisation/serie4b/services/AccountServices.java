@@ -6,6 +6,8 @@
 package ch.hearc.ig.industrialisation.serie4b.services;
 
 import ch.hearc.ig.industrialisation.serie4b.business.Account;
+import ch.hearc.ig.industrialisation.serie4b.business.AccountWithCreditLimit;
+import ch.hearc.ig.industrialisation.serie4b.business.AccountWithDebitLimit;
 import ch.hearc.ig.industrialisation.serie4b.connexion.OracleConnection;
 import ch.hearc.ig.industrialisation.serie4b.datamapper.*;
 import java.sql.Connection;
@@ -28,7 +30,7 @@ public class AccountServices {
      * @param aInt
      * @return
      */
-    public static Set<Account> getAllAccountsByCustomer(int aInt)  {
+    public static Set<Account> getAllAccountsByCustomer(int aInt) {
         Connection c = OracleConnection.getJDBCConnection();
         return AccountMapper.getAllAccountsByCustomer(c, aInt);
 
@@ -41,10 +43,8 @@ public class AccountServices {
      */
     public static Integer insertAccount(Account acc) {
         Connection c = OracleConnection.getJDBCConnection();
-        return AccountMapper.insertAccount(c,acc);
-        
-            
-            
+        return AccountMapper.insertAccount(c, acc);
+
     }
 
     /**
@@ -52,9 +52,8 @@ public class AccountServices {
      * @param acc
      */
     public static void deleteAccount(Account acc) {
-       Connection c = OracleConnection.getJDBCConnection();
-       AccountMapper.deleteAccount(c,acc);
-       
+        Connection c = OracleConnection.getJDBCConnection();
+        AccountMapper.deleteAccount(c, acc);
 
     }
 
@@ -64,9 +63,81 @@ public class AccountServices {
      * @return
      */
     public static int updateAccount(Account acc) {
-        
+
         Connection c = OracleConnection.getJDBCConnection();
-        
-        return AccountMapper.updateAccount(c,acc);
+
+        return AccountMapper.updateAccount(c, acc);
+    }
+
+    public static Set<AccountWithDebitLimit> getAllAccountsDLByCustomer(int aInt) {
+        Connection c = OracleConnection.getJDBCConnection();
+        return AccountDLMapper.getAllAccountsDLByCustomer(c, aInt);
+    }
+
+    /**
+     *
+     * @param acc
+     * @return
+     */
+    public static int insertDLAccount(AccountWithDebitLimit acc) {
+
+        Connection c = OracleConnection.getJDBCConnection();
+        return AccountDLMapper.insertDLAccount(c, acc);
+    }
+
+    /**
+     *
+     * @param acc
+     * @return
+     */
+    public static int deleteCLAccount(AccountWithDebitLimit acc) {
+        Connection c = OracleConnection.getJDBCConnection();
+        return AccountDLMapper.deleteCLAccount(c, acc);
+    }
+
+    /**
+     *
+     * @param acc
+     * @return
+     */
+    public static int updateCLAccount(AccountWithDebitLimit acc) {
+        Connection c = OracleConnection.getJDBCConnection();
+        return AccountDLMapper.updateCLAccount(c, acc);
+    }
+
+    public static Set<AccountWithCreditLimit> getAllAccountsCLByCustomer(int aInt) {
+        Connection c = OracleConnection.getJDBCConnection();
+        return AccountCLMapper.getAllAccountsCLByCustomer(c, aInt);
+    }
+
+    /**
+     *
+     * @param acc
+     * @return
+     */
+    public static int insertCLAccount(AccountWithCreditLimit acc) {
+
+        Connection c = OracleConnection.getJDBCConnection();
+        return AccountCLMapper.insertCLAccount(c, acc);
+    }
+
+    /**
+     *
+     * @param acc
+     * @return
+     */
+    public static int deleteCLAccount(AccountWithCreditLimit acc) {
+        Connection c = OracleConnection.getJDBCConnection();
+        return AccountCLMapper.deleteCLAccount(c, acc);
+    }
+
+    /**
+     *
+     * @param acc
+     * @return
+     */
+    public static int updateCLAccount(AccountWithCreditLimit acc) {
+        Connection c = OracleConnection.getJDBCConnection();
+        return AccountCLMapper.updateCLAccount(c, acc);
     }
 }
